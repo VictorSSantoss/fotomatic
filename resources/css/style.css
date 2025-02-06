@@ -1,4 +1,9 @@
 /* Universal Styles */
+@font-face {
+  font-family: "Sauce Tomato";
+  src: url(../fonts/sauce-tomato/Sauce_Tomato.woff2); format("woff2");
+       url(../fonts/sauce-tomato/Sauce_Tomato.woff); format("woff");
+}
 
 html {
   font-family: "Roboto", sans-serif;
@@ -7,8 +12,6 @@ html {
 
 .main-content {
   position: relative;
-  top: 5.3125rem; /* To offset for fixed header. */
-
 }
 
 .center {
@@ -29,6 +32,10 @@ html {
   display: block;
 }
 
+header .mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 760px) {
   .main-content {
     top: 2.5625rem;
@@ -38,28 +45,62 @@ html {
 /* Header */
 
 header {
-  position: fixed;
   width: 100%;
-  border-bottom: solid 1px #c6c1c1;
-  background-color: white;
+  height: 85px;
+  background-color: rgb(2, 221, 101);
+  font-family: "Sauce Tomato";
 }
 
 header .content {
   display: flex;
   align-items: center;
-  padding: 1.875rem;
+  margin-left: 30px;
+  margin-right: 30px;
 }
+
+header .logo,
+header nav {
+  display: flex;
+} 
 
 header .logo {
   flex: 1;
 }
 
+header .logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 10px;
+  border-radius: 0.6rem;
+}
+
 header nav ul {
   display: flex;
+  list-style-type: none;
 }
 
 nav li {
   padding-left: 3.5rem;
+}
+
+nav li:hover {
+  cursor: pointer;
+}
+
+nav li:hover a {
+  color: #ff6347;
+}
+
+#content .icon img {
+  padding-top: 10px;
+}
+
+.desktop a {
+  color: beige;
+  background-color: rgb(0, 0, 0);
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 nav a {
@@ -71,11 +112,8 @@ nav a {
 
 header .icon {
   width: 1rem;
-  padding-left: .75rem;
-}
+  padding-left: 0.5rem;
 
-header .mobile {
-  display: none;
 }
 
 @media only screen and (max-width: 760px) {
@@ -100,7 +138,6 @@ header .mobile {
   }
 
   header .mobile li {
-    padding: 0;
   }
 
   header .mobile .button {
@@ -109,6 +146,11 @@ header .mobile {
     line-height: 1.6;
     color: white;
   }
+
+  header .mobile {
+    display: none;
+  }
+
 }
 
 /* Sign Up Section */
@@ -130,9 +172,9 @@ header .mobile {
   top: 170px;
   left: 100px;
   padding: 0 5rem 2.5rem 5rem;
-  border: solid 1px #979797;
-  border-radius: 4px;
-  background-color: #9dc20b;
+  border: solid 1px #03c7037a;
+  border-radius: 15px;
+  background-color: rgb(2, 221, 101);
 }
 
 #sign-up-cta .content {
@@ -200,6 +242,7 @@ header .mobile {
   #sign-up-cta h2 {
     font-size: 2.25rem;
   }
+  
 }
 
 @media only screen and (max-width: 450px) {
@@ -214,6 +257,7 @@ header .mobile {
   #sign-up-cta h2 {
     font-size: 2rem;
   }
+
 }
 
 /* Features Section */
@@ -270,6 +314,7 @@ header .mobile {
     font-size: .875rem;
     line-height: 1.4;
   }
+
 }
 
 @media only screen and (max-width: 760px) {
@@ -282,6 +327,7 @@ header .mobile {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
   }
+
 }
 
 /* Filters Section */
@@ -309,15 +355,11 @@ header .mobile {
   color: white;
 }
 
-
-.filters-container img {
-  display: inline-block;
-  flex-wrap:nowrap
-  width: 100%;
-  height: 100%;
-  border-radius: 0.8rem;
+#filters-section .images-container {
+  display: flex;
+  max-width: 100%;
+  padding: 0 1%;
 }
-
 
 @media only screen and (max-width: 760px) {
   #filters-section {
@@ -353,23 +395,32 @@ header .mobile {
 
 #quotes-section {
   background-color: #f3f3f3;
+  height: 160px;
 }
 
 #quotes-section content {
   padding: 5rem 0;
-}
-
-#quotes-section quote {
-  padding-right: 1.875rem;
-  font-family: "Palatino", serif;
-  font-size: 1.875rem;
-  line-height: 1.1;
-  font-style: italic;
-  color: #4a4a4a;
+  
 }
 
 #quotes-section quote-citation {
   height: 1.875rem;
+}
+
+#quotes-section .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Palatino, serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #4a4a4a;
+  line-height: 1.1;
+  padding: 4rem 1.5rem;
+}
+
+.content img {
+  margin-left: 30px;
 }
 
 @media only screen and (max-width: 760px) {
@@ -404,6 +455,7 @@ footer .content {
 
 footer .copyright {
   flex-grow: 1;
+  margin-left: 32px;
 }
 
 @media only screen and (min-width: 760px) {
